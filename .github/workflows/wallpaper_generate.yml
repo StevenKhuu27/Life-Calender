@@ -44,6 +44,9 @@ jobs:
     - run: |
         mkdir public
         mv wallpaper.png public/
+        touch public/.nojekyll
+        # Create a simple landing page so you can see it's working
+        echo '<html><body><img src="wallpaper.png"></body></html>' > public/index.html
     - name: Upload static files as artifact
       id: deployment
       uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
