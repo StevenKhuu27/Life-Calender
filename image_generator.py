@@ -70,7 +70,7 @@ try:
     with open("quotes.json", "r") as f:
         data = json.load(f)
         quotes = data["quotes"]
-        quote = quotes[(today.toordinal() + 1) % len(quotes)]
+        quote = quotes[(today.toordinal()) % len(quotes)]
         print(quote)
 except FileNotFoundError:
     print("file not found")
