@@ -1,0 +1,37 @@
+name: Wallpaper Generation
+
+on: 
+  push:
+    branches:
+      - master
+  # schedule:
+  #   - cron: ''
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+    - name: Set up Python env
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install Deps
+      run: |
+        python -m pip install --upgraded pip
+        pip install -r requirements.txt
+    - run: python image_generator.py
+    # - name: Upload to Google Drive
+    #   uses: logickoder/google-drive-upload@v2
+    #   with:
+    #     credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
+    #     filename: "daily_wallpaper.jpg"
+    #     folderID: ${{ secrets.GDRIVE_FOLDER_ID }}
+    #     overwrite: "true" # Replaces the old file so your phone always sees the same filename
+    - name: Upload to Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: wallpaper
+        path: wallpaper.png
+        compression-level: 0
