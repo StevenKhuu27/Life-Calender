@@ -1,5 +1,6 @@
 # Life Calendar with quotes
 This project is based off Life calendar (https://thelifecalendar.com/). Such a simple idea that was done so well, but I wanted to add a few additions to it that would help me out on a daily basis.
+![alt text](image.png)
 
 ## Features
 - Only shows the year of 365 days, but tracks where we are up to in the year, in both dot form and day tracker.
