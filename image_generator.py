@@ -41,10 +41,8 @@ new_image = Image.new("RGB", image_size, color=bg_colour)
 draw = ImageDraw.Draw(new_image)
 
 # Date Variables
-today = date.today()
-today_aedt = datetime.now(ZoneInfo("Australia/Sydney")).date()
-print(today_aedt)
-print(today)
+# today = date.today() #Commeting this out as when running on github actions its in UTC time
+today = datetime.now(ZoneInfo("Australia/Sydney")).date()
 year_start = date(today.year, 1, 1)
 day_of_year = (today - year_start).days + 1
 day_count = 0
@@ -87,6 +85,7 @@ draw.multiline_text((new_image.width/2, quote_base + 200*scale), text=text_with_
 new_image.show()
 new_image = new_image.resize((1440, 3216), Image.LANCZOS)
 new_image.save("wallpaper.png", quality=100)
+
 
 
 
