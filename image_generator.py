@@ -65,7 +65,7 @@ for j in range(num_dots_y):
 
 # Text generation
 quote_base = margin_y + usable_height
-draw.text((new_image.width/2, quote_base), text=str(day_of_year)+"/365 "+f"{precentage}%", font=font_small, fill=yellow_colour, anchor="mm", stroke_width=2)
+draw.text((new_image.width/2, quote_base), text=str(day_of_year)+"/365 "+f"({precentage}%)", font=font_small, fill=yellow_colour, anchor="mm", stroke_width=2)
 # quote = "This is your year, achieve your goals"
 # draw.text((new_image.width/2, quote_base + 100), text=quote, font=font_small, fill=yellow_colour, anchor="mm", stroke_width=1)
 
@@ -86,6 +86,7 @@ draw.multiline_text((new_image.width/2, quote_base + 200*scale), text=text_with_
 new_image.show()
 new_image = new_image.resize((1440, 3216), Image.LANCZOS)
 new_image.save("wallpaper.png", quality=100)
+
 
 
 
