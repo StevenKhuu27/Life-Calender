@@ -20,7 +20,7 @@ https://stevenkhuu27.github.io/Life-Calendar/
 - I want to be able to send a message problably through Telegram Bot API, to create a to-do task that I can update my wallpaper with and display.
 - Customise wall paper size; potentially based off various phone sizes as inputs to the github actions pipeline.
 - Google Drive Integration (https://www.merge.dev/blog/google-drive-api-python).
-- Add a 7 day dot timer for this week
+- ~~Add a 7 day dot timer for this week~~
 - Potentially percent of year done instead of day/year
 - Do a Life calendar of years done where each row is a year
 - Add identity statements alongside quotes.
